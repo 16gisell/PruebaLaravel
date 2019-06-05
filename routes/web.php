@@ -17,6 +17,8 @@ Route::get('/', function () {
 Route::get('Prueba/d{id}','PruebaController@destroy');
 Route::resource('Prueba', 'PruebaController');
 
+Route::resource('PruebaApi', 'PruebaApiController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

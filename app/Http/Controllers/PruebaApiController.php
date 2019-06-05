@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Prueba;
+use App\PruebaApi;
 
-class PruebaController extends Controller
+class PruebaApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class PruebaController extends Controller
      */
     public function index()
     {
-       //
+        // $pruebaApi = PruebaApi::all();
+        // return view('pruebaApi.index', compact('pruebaApi'));
     }
 
     /**
@@ -35,14 +36,12 @@ class PruebaController extends Controller
      */
     public function store(Request $request)
     {
-        $pruebas = new Prueba;
-        $pruebas->ab1 = $request->input('ab1');
-        $pruebas->ab2 = $request->input('ab2');
-        $pruebas->ab3 = $request->input('ab3');
-        $pruebas->ab4 = $request->input('ab4');
-        $pruebas->save();
-
-        return back();
+        $pruebaApi = new PruebaApi;
+        $pruebaApi->ab1 = $request->input('ab1');
+        $pruebaApi->ab2 = $request->input('ab2');
+        $pruebaApi->ab3 = $request->input('ab3');
+        $pruebaApi->ab4 = $request->input('ab4');
+        $pruebaApi->save();
     }
 
     /**
@@ -53,9 +52,7 @@ class PruebaController extends Controller
      */
     public function show($id)
     {
-        $prueba = Prueba::find($id);
-        return view('prueba.show', compact('prueba'));
-        // return Prueba::where('id', $id)->get();
+        return PruebaApi::where('id', $id)->get();
     }
 
     /**
@@ -66,8 +63,7 @@ class PruebaController extends Controller
      */
     public function edit($id)
     {
-        $prueba = Prueba::find($id);
-        return view('prueba.edit', compact('prueba'));
+        //
     }
 
     /**
@@ -79,14 +75,7 @@ class PruebaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $prueba = Prueba::find($id);
-        $prueba->ab1 = $request->input('ab1');
-        $prueba->ab2 = $request->input('ab2');
-        $prueba->ab3 = $request->input('ab3');
-        $prueba->ab4 = $request->input('ab4');
-        //$prueba->fill($request->all());
-        $prueba->save();
-        return back();
+        //
     }
 
     /**
@@ -97,8 +86,6 @@ class PruebaController extends Controller
      */
     public function destroy($id)
     {
-        $prueba = Prueba::find($id);
-        $prueba->delete();
-        return back();
+        return PruebaApi::where('id', $id)->delete();
     }
 }

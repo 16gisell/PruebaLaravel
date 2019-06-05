@@ -58,6 +58,7 @@
                                         <td>{{$prueba->ab1}}</td>
                                         <td>
                                             <a href="/Prueba/{{$prueba->id}}" class="btn btn-info">Ver</a>
+                                            <a href="/Prueba/{{$prueba->id}}/edit" class="btn btn-warning">Editar</a>
                                             <a href="/Prueba/d{{$prueba->id}}" class="btn btn-danger">Eliminar</a>
                                         </td>
                                     </tr>
@@ -67,6 +68,7 @@
                     </div>
                 </div>
             </div>
-        
+        </div>
+    </div>
 </div>
 @endsection

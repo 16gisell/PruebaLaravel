@@ -25,6 +25,7 @@
         </div>
         <br>
         <a href="/home" class="btn btn-dark">Regresar</a>
+        <a href="/Prueba/{{$prueba->id}}/edit" class="btn btn-warning">Editar</a>
     </div>
 </div>
 @endsection
